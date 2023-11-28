@@ -125,14 +125,14 @@
 
 import { createApp } from "vue";
 import App from "./App.vue";
-import Header from "./components/header/Header.vue";
+import TheHeader from "./components/header/TheHeader.vue";
 import BasePlan from "./components/stundenplan/BasePlan.vue";
 import PageTitle from "./components/PageTitle.vue";
 import store from "./store/index.js";
 
 const app = createApp(App);
 
-app.component("Header", Header);
+app.component("TheHeader", TheHeader);
 app.component("BasePlan", BasePlan);
 app.component("PageTitle", PageTitle);
 

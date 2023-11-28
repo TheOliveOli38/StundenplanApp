@@ -1,5 +1,3 @@
-import TableRows from './TableRows.vue';
-
 <template>
   <table
     style="
@@ -22,6 +20,15 @@ import TableRows from './TableRows.vue';
       <th>Do.</th>
       <th>Fr.</th>
     </tr>
-    <tablerows></tablerows>
+    <table-rows></table-rows>
   </table>
 </template>
+
+<script>
+import TableRows from "./TableRows.vue";
+export default {
+  components: {
+    TableRows,
+  },
+};
+</script>
