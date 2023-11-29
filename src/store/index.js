@@ -1,9 +1,11 @@
 import { createStore } from "vuex";
+import service from "./service.js";
 
 const store = createStore({
   modules: {},
   state() {
     return {
+      Subjects: [[], [], [], [], []],
       std1: {
         montagFach: "",
         montagLehrer: "",
@@ -148,10 +150,19 @@ const store = createStore({
       state.std1.montagLehrer = "Hew";
       state.std1.montagRaum = "A101";
     },
+    saveSubjects(state, { data, DayIndex }) {
+      state.Subjects[DayIndex] = data;
+    },
   },
   actions: {
     testEdit({ commit }) {
       commit("testEdit");
+    },
+    async getSubjects({ commit }, DayIndex) {
+      await service.getSubjectByDays().then((response) => {
+        console.log(response);
+        commit("saveSubjects", { response, DayIndex });
+      });
     },
   },
   getters: {
@@ -175,6 +186,9 @@ const store = createStore({
         return stdData[wochentag + "Raum"];
       }
       return null; // Oder einen Standardwert zurückgeben, wenn das Fach nicht gefunden wurde
+    },
+    getSubjectArray: (state) => {
+      return state.Subjects;
     },
   },
 });

@@ -124,6 +124,7 @@
 // }
 
 import { createApp } from "vue";
+import VueAxios from "vue-axios";
 import App from "./App.vue";
 import TheHeader from "./components/header/TheHeader.vue";
 import BasePlan from "./components/stundenplan/BasePlan.vue";
@@ -137,4 +138,5 @@ app.component("BasePlan", BasePlan);
 app.component("PageTitle", PageTitle);
 
 app.use(store);
+app.use(VueAxios);
 app.mount("#app");

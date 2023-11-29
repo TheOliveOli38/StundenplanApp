@@ -31,6 +31,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -43,6 +44,7 @@ export default {
       "getFachByWochentag",
       "getLehrerByWochentag",
       "getRaumByWochentag",
+      "getSubjectArray",
     ]),
   },
   methods: {
@@ -53,6 +55,11 @@ export default {
         console.log("Did not click on right object!");
       }
     },
+    ...mapActions(["getSubjects"]),
+  },
+
+  async beforeMount() {
+    this.getSubjects();
   },
 };
 </script>
