@@ -1,27 +1,27 @@
 <template>
   <tr v-for="(s, index) in std" :key="index">
     <th>{{ index + 1 }}. Std</th>
-    <td @click="openDialogOnClick($event)" :id="index">
+    <td @click="openDialogOnClick($event)" :id="index" style="width: 20%">
       {{ getFachByWochentag(s, "montag") }} <br />
       {{ getLehrerByWochentag(s, "montag") }} <br />
       {{ getRaumByWochentag(s, "montag") }}
     </td>
-    <td :id="index + 10">
+    <td :id="index + 10" style="width: 20%">
       {{ getFachByWochentag(s, "dienstag") }} <br />
       {{ getLehrerByWochentag(s, "dienstag") }} <br />
       {{ getRaumByWochentag(s, "dienstag") }}
     </td>
-    <td :id="index + 20">
+    <td :id="index + 20" style="width: 20%">
       {{ getFachByWochentag(s, "mittwoch") }} <br />
       {{ getLehrerByWochentag(s, "mittwoch") }} <br />
       {{ getRaumByWochentag(s, "mittwoch") }}
     </td>
-    <td :id="index + 30">
+    <td :id="index + 30" style="width: 20%">
       {{ getFachByWochentag(s, "donnerstag") }} <br />
       {{ getLehrerByWochentag(s, "donnerstag") }} <br />
       {{ getRaumByWochentag(s, "donnerstag") }}
     </td>
-    <td :id="index + 40">
+    <td :id="index + 40" style="width: 20%">
       {{ getFachByWochentag(s, "freitag") }} <br />
       {{ getLehrerByWochentag(s, "freitag") }} <br />
       {{ getRaumByWochentag(s, "freitag") }}
