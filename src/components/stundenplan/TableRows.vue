@@ -1,29 +1,29 @@
 <template>
   <tr v-for="(s, index) in std" :key="index">
     <th>{{ index + 1 }}. Std</th>
-    <td>
+    <td @click="openDialogOnClick($event)" :id="index">
       {{ getFachByWochentag(s, "montag") }} <br />
-      {{ getLehrerByWochentag(s, "montag") }} |
+      {{ getLehrerByWochentag(s, "montag") }} <br />
       {{ getRaumByWochentag(s, "montag") }}
     </td>
-    <td>
+    <td :id="index + 10">
       {{ getFachByWochentag(s, "dienstag") }} <br />
-      {{ getLehrerByWochentag(s, "dienstag") }} |
+      {{ getLehrerByWochentag(s, "dienstag") }} <br />
       {{ getRaumByWochentag(s, "dienstag") }}
     </td>
-    <td>
+    <td :id="index + 20">
       {{ getFachByWochentag(s, "mittwoch") }} <br />
-      {{ getLehrerByWochentag(s, "mittwoch") }} |
+      {{ getLehrerByWochentag(s, "mittwoch") }} <br />
       {{ getRaumByWochentag(s, "mittwoch") }}
     </td>
-    <td>
+    <td :id="index + 30">
       {{ getFachByWochentag(s, "donnerstag") }} <br />
-      {{ getLehrerByWochentag(s, "donnerstag") }} |
+      {{ getLehrerByWochentag(s, "donnerstag") }} <br />
       {{ getRaumByWochentag(s, "donnerstag") }}
     </td>
-    <td>
+    <td :id="index + 40">
       {{ getFachByWochentag(s, "freitag") }} <br />
-      {{ getLehrerByWochentag(s, "freitag") }} |
+      {{ getLehrerByWochentag(s, "freitag") }} <br />
       {{ getRaumByWochentag(s, "freitag") }}
     </td>
   </tr>
@@ -45,10 +45,14 @@ export default {
       "getRaumByWochentag",
     ]),
   },
-  // methods: {
-  //   getSubjectByIndex(index) {
-  //     this.$store.getters[`getStd${index}Subjects`];
-  //   },
-  // },
+  methods: {
+    openDialogOnClick(event) {
+      if (event.target.id == 1) {
+        this.$store.dispatch("testEdit");
+      } else {
+        console.log("Did not click on right object!");
+      }
+    },
+  },
 };
 </script>

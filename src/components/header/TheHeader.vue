@@ -8,16 +8,10 @@
         >Stundenplan-App</span
       >
       <div class="mdl-layout-spacer"></div>
-      <nav-links></nav-links>
     </div>
   </header>
 </template>
 
 <script>
-import NavLinks from "./NavLinks.vue";
-export default {
-  components: {
-    NavLinks,
-  },
-};
+export default {};
 </script>

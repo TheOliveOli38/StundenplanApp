@@ -32,3 +32,12 @@ export default {
   },
 };
 </script>
+
+<style>
+table,
+th,
+td {
+  border: 1px solid rgb(218, 218, 218);
+  border-collapse: collapse;
+}
+</style>

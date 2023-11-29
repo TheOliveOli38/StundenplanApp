@@ -1,3 +1,3 @@
 <template>
-  <h1 style="font-weight: bold">Ihr Stundenplan</h1>
+  <h2 style="font-weight: bold">Ihr Stundenplan</h2>
 </template>
