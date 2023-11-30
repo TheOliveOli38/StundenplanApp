@@ -1,8 +1,16 @@
 <template>
-  <!-- <div style="background-color: aqua; width: 300px; height: 300px">
-    {{ allHours }}
-  </div> -->
-  <tr v-for="(s, index) in std" :key="index">
+  <div style="background-color: aqua; width: 250px; height: 150px">
+    <!-- {{ allHours }} -->
+    <tr v-for="(s, index) in std" :key="index">
+      <!-- <th>{{ index + 1 }}. Std</th> -->
+      <td :id="index" style="width: 100%">
+        <table-subject></table-subject>
+        <table-teach></table-teach>
+        <table-room></table-room>
+      </td>
+    </tr>
+  </div>
+  <!-- <tr v-for="(s, index) in std" :key="index">
     <th>{{ index + 1 }}. Std</th>
     <td @click="openDialogOnClick($event)" :id="index" style="width: 20%">
       {{ getSubjectArray[0][index]?.name }}<br />
@@ -29,30 +37,38 @@
       {{ getSubjectArray[4][index]?.lehrkraft }} <br />
       {{ getSubjectArray[4][index]?.raum }}
     </td>
-  </tr>
+  </tr> -->
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import TableSubject from "./TableSubject.vue";
+import TableTeach from "./TableTeach.vue";
+import TableRoom from "./TableRoom.vue";
 
 export default {
+  components: {
+    TableSubject,
+    TableTeach,
+    TableRoom,
+  },
   data() {
     return {
       std: ["std1", "std2", "std3", "std4", "std5", "std6", "std7", "std8"],
     };
   },
   computed: {
-    // ...mapGetters({
-    //   allHours: "getAllHours",
-    // }),
+    ...mapGetters({
+      allHours: "getAllHours",
+    }),
 
-    ...mapGetters([
-      // "getAllHours",
-      "getFachByWochentag",
-      "getLehrerByWochentag",
-      "getRaumByWochentag",
-      "getSubjectArray",
-    ]),
+    // ...mapGetters([
+    // // "getAllHours",
+    // "getFachByWochentag",
+    // "getLehrerByWochentag",
+    // "getRaumByWochentag",
+    // "getSubjectArray",
+    // ]),
   },
   methods: {
     openDialogOnClick(event) {
@@ -62,11 +78,11 @@ export default {
         console.log("Did not click on right object!");
       }
     },
-    ...mapActions(["getSubjects"]),
+    // ...mapActions(["getSubjects"]),
   },
 
   async beforeMount() {
-    this.getSubjects();
+    // this.getSubjects();
   },
 };
 </script>
