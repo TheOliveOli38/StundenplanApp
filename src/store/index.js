@@ -142,6 +142,240 @@ const store = createStore({
         freitagLehrer: "",
         freitagRaum: "",
       },
+      // alleStunden: [
+      //   {
+      //     tage: [
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test3",
+      //         lehrer: "Kra",
+      //         raum: "A217",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     tage: [
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test3",
+      //         lehrer: "Kra",
+      //         raum: "A217",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     tage: [
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test3",
+      //         lehrer: "Kra",
+      //         raum: "A217",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     tage: [
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test3",
+      //         lehrer: "Kra",
+      //         raum: "A217",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     tage: [
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test3",
+      //         lehrer: "Kra",
+      //         raum: "A217",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     tage: [
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test3",
+      //         lehrer: "Kra",
+      //         raum: "A217",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     tage: [
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test3",
+      //         lehrer: "Kra",
+      //         raum: "A217",
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     tage: [
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test",
+      //         lehrer: "Sch",
+      //         raum: "A111",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test2",
+      //         lehrer: "Alt",
+      //         raum: "A117",
+      //       },
+      //       {
+      //         fach: "Test3",
+      //         lehrer: "Kra",
+      //         raum: "A217",
+      //       },
+      //     ],
+      //   },
+      // ],
     };
   },
   mutations: {
@@ -151,7 +385,42 @@ const store = createStore({
       state.std1.montagRaum = "A101";
     },
     saveSubjects(state, { data, DayIndex }) {
-      state.Subjects[DayIndex] = data;
+      var newData = [];
+      console.log(data);
+      var tempData;
+      const subjectTitel = [
+        "Deutsch",
+        "Englisch",
+        "Mathe",
+        "Erdkunde",
+        "Sport",
+        "Physik",
+        "Chemie",
+        "Biologie",
+        "Geschichte",
+        "Französisch",
+        "Spanisch",
+        "Latein",
+        "Kursunterricht",
+        "Verfügung",
+        "Politik",
+        "Wirtschaft",
+        "NTW",
+        "GSW",
+      ];
+      for (let i = 0; i < 8; i++) {
+        tempData = data[i];
+        newData.push(tempData);
+        console.log(newData);
+        let namedSubject = subjectTitel[newData[i]?.id];
+        if (newData[newData.length - 1]) {
+          newData[newData.length - 1].name = namedSubject;
+        }
+        console.log(newData);
+      }
+      console.log(newData);
+      state.Subjects[DayIndex] = newData;
+      console.log(state.Subjects[0][0]);
     },
   },
   actions: {
@@ -159,10 +428,13 @@ const store = createStore({
       commit("testEdit");
     },
     async getSubjects({ commit }, DayIndex) {
-      await service.getSubjectByDays().then((response) => {
-        console.log(response);
-        commit("saveSubjects", { response, DayIndex });
-      });
+      for (let i = 1; i < 6; i++) {
+        await service.getSubjectByDays(i).then((response) => {
+          console.log(response);
+          DayIndex = i - 1;
+          commit("saveSubjects", { data: response, DayIndex });
+        });
+      }
     },
   },
   getters: {
@@ -187,9 +459,12 @@ const store = createStore({
       }
       return null; // Oder einen Standardwert zurückgeben, wenn das Fach nicht gefunden wurde
     },
-    getSubjectArray: (state) => {
+    getSubjectArray(state) {
       return state.Subjects;
     },
+    // getAllHours: (state) => () => {
+    //   return state.alleStunden;
+    // },
   },
 });
 

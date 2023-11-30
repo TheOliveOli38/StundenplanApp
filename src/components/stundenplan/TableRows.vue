@@ -1,37 +1,39 @@
 <template>
+  <!-- <div style="background-color: aqua; width: 300px; height: 300px">
+    {{ allHours }}
+  </div> -->
   <tr v-for="(s, index) in std" :key="index">
     <th>{{ index + 1 }}. Std</th>
     <td @click="openDialogOnClick($event)" :id="index" style="width: 20%">
-      {{ getFachByWochentag(s, "montag") }} <br />
-      {{ getLehrerByWochentag(s, "montag") }} <br />
-      {{ getRaumByWochentag(s, "montag") }}
+      {{ getSubjectArray[0][index]?.name }}<br />
+      {{ getSubjectArray[0][index]?.lehrkraft }} <br />
+      {{ getSubjectArray[0][index]?.raum }}
     </td>
     <td :id="index + 10" style="width: 20%">
-      {{ getFachByWochentag(s, "dienstag") }} <br />
-      {{ getLehrerByWochentag(s, "dienstag") }} <br />
-      {{ getRaumByWochentag(s, "dienstag") }}
+      {{ getSubjectArray[1][index]?.name }}<br />
+      {{ getSubjectArray[1][index]?.lehrkraft }} <br />
+      {{ getSubjectArray[1][index]?.raum }}
     </td>
     <td :id="index + 20" style="width: 20%">
-      {{ getFachByWochentag(s, "mittwoch") }} <br />
-      {{ getLehrerByWochentag(s, "mittwoch") }} <br />
-      {{ getRaumByWochentag(s, "mittwoch") }}
+      {{ getSubjectArray[2][index]?.name }}<br />
+      {{ getSubjectArray[2][index]?.lehrkraft }} <br />
+      {{ getSubjectArray[2][index]?.raum }}
     </td>
     <td :id="index + 30" style="width: 20%">
-      {{ getFachByWochentag(s, "donnerstag") }} <br />
-      {{ getLehrerByWochentag(s, "donnerstag") }} <br />
-      {{ getRaumByWochentag(s, "donnerstag") }}
+      {{ getSubjectArray[3][index]?.name }}<br />
+      {{ getSubjectArray[3][index]?.lehrkraft }} <br />
+      {{ getSubjectArray[3][index]?.raum }}
     </td>
     <td :id="index + 40" style="width: 20%">
-      {{ getFachByWochentag(s, "freitag") }} <br />
-      {{ getLehrerByWochentag(s, "freitag") }} <br />
-      {{ getRaumByWochentag(s, "freitag") }}
+      {{ getSubjectArray[4][index]?.name }}<br />
+      {{ getSubjectArray[4][index]?.lehrkraft }} <br />
+      {{ getSubjectArray[4][index]?.raum }}
     </td>
   </tr>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import { mapActions } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
@@ -40,7 +42,12 @@ export default {
     };
   },
   computed: {
+    // ...mapGetters({
+    //   allHours: "getAllHours",
+    // }),
+
     ...mapGetters([
+      // "getAllHours",
       "getFachByWochentag",
       "getLehrerByWochentag",
       "getRaumByWochentag",

@@ -1,17 +1,11 @@
 import axios from "axios";
 
-async function getSubjectByDays(DayID, DayIndex) {
-  await axios({
+async function getSubjectByDays(i, DayIndex) {
+  const response = await axios({
     method: "get",
-    url: "http://localhost:8081/Tag/getSubjectsByDay/" + 1,
-  })
-    .then(function (response) {
-      console.log(response.data);
-      return response;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    url: "http://localhost:8081/Tag/getSubjectsByDay/" + i,
+  });
+  return response.data;
 }
 
 export default {
