@@ -1,7 +1,4 @@
 <template>
-  <!-- <div style="background-color: aqua; width: 300px; height: 300px">
-    {{ allHours }}
-  </div> -->
   <tr v-for="(s, index) in std" :key="index">
     <th>{{ index + 1 }}. Std</th>
     <td @click="openDialogOnClick($event)" :id="index" style="width: 20%">
@@ -42,12 +39,7 @@ export default {
     };
   },
   computed: {
-    // ...mapGetters({
-    //   allHours: "getAllHours",
-    // }),
-
     ...mapGetters([
-      // "getAllHours",
       "getFachByWochentag",
       "getLehrerByWochentag",
       "getRaumByWochentag",
@@ -65,7 +57,7 @@ export default {
     ...mapActions(["getSubjects"]),
   },
 
-  async beforeMount() {
+  async mounted() {
     this.getSubjects();
   },
 };

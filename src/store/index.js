@@ -6,6 +6,7 @@ const store = createStore({
   state() {
     return {
       Subjects: [[], [], [], [], []],
+      status: 200,
       std1: {
         montagFach: "",
         montagLehrer: "",
@@ -142,240 +143,6 @@ const store = createStore({
         freitagLehrer: "",
         freitagRaum: "",
       },
-      // alleStunden: [
-      //   {
-      //     tage: [
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test3",
-      //         lehrer: "Kra",
-      //         raum: "A217",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     tage: [
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test3",
-      //         lehrer: "Kra",
-      //         raum: "A217",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     tage: [
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test3",
-      //         lehrer: "Kra",
-      //         raum: "A217",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     tage: [
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test3",
-      //         lehrer: "Kra",
-      //         raum: "A217",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     tage: [
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test3",
-      //         lehrer: "Kra",
-      //         raum: "A217",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     tage: [
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test3",
-      //         lehrer: "Kra",
-      //         raum: "A217",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     tage: [
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test3",
-      //         lehrer: "Kra",
-      //         raum: "A217",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     tage: [
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test",
-      //         lehrer: "Sch",
-      //         raum: "A111",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test2",
-      //         lehrer: "Alt",
-      //         raum: "A117",
-      //       },
-      //       {
-      //         fach: "Test3",
-      //         lehrer: "Kra",
-      //         raum: "A217",
-      //       },
-      //     ],
-      //   },
-      // ],
     };
   },
   mutations: {
@@ -422,6 +189,11 @@ const store = createStore({
       state.Subjects[DayIndex] = newData;
       console.log(state.Subjects[0][0]);
     },
+    setErrorStatus(state, data) {
+      state.status = data.data;
+      console.log(data.data);
+      console.log(state.status);
+    },
   },
   actions: {
     testEdit({ commit }) {
@@ -431,8 +203,13 @@ const store = createStore({
       for (let i = 1; i < 6; i++) {
         await service.getSubjectByDays(i).then((response) => {
           console.log(response);
-          DayIndex = i - 1;
-          commit("saveSubjects", { data: response, DayIndex });
+          if (response.status == 200 || 201) {
+            DayIndex = i - 1;
+            commit("saveSubjects", { data: response.data, DayIndex });
+          } else if (response != 200) {
+            console.log(response);
+            commit("setErrorStatus", { data: response });
+          }
         });
       }
     },
@@ -443,28 +220,28 @@ const store = createStore({
       if (stdData && stdData[wochentag + "Fach"]) {
         return stdData[wochentag + "Fach"];
       }
-      return null; // Oder einen Standardwert zurückgeben, wenn das Fach nicht gefunden wurde
+      return null;
     },
     getLehrerByWochentag: (state) => (std, wochentag) => {
       const stdData = state[std];
       if (stdData && stdData[wochentag + "Lehrer"]) {
         return stdData[wochentag + "Lehrer"];
       }
-      return null; // Oder einen Standardwert zurückgeben, wenn das Fach nicht gefunden wurde
+      return null;
     },
     getRaumByWochentag: (state) => (std, wochentag) => {
       const stdData = state[std];
       if (stdData && stdData[wochentag + "Raum"]) {
         return stdData[wochentag + "Raum"];
       }
-      return null; // Oder einen Standardwert zurückgeben, wenn das Fach nicht gefunden wurde
+      return null;
     },
     getSubjectArray(state) {
       return state.Subjects;
     },
-    // getAllHours: (state) => () => {
-    //   return state.alleStunden;
-    // },
+    returnErrorStatus(state) {
+      return state.status;
+    },
   },
 });
 
