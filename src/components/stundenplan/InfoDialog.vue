@@ -1,11 +1,18 @@
 <template>
   <div class="backdrop" @click="closeDialog"></div>
-  <div id="test" class="mdl-shadow--4dp">
-    <h3>Info zum Fach</h3>
-    <p><strong>Fach: </strong>{{ info.name }}</p>
-    <p><strong>Lehrkraft: </strong>{{ info.lehrkraft }}</p>
-    <p><strong>Raum: </strong>{{ info.raum }}</p>
-    <button @click="closeDialog" class="mdl-button">Close</button>
+  <div id="test" class="mdl-shadow--8dp">
+    <h3 style="font-weight: bold">Info zum Fach</h3>
+    <h4><strong>Fach: </strong>{{ info.name }}</h4>
+    <h4><strong>Lehrkraft: </strong>{{ info.lehrkraft }}</h4>
+    <h4><strong>Raum: </strong>{{ info.raum }}</h4>
+    <br />
+    <button
+      @click="closeDialog"
+      class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"
+      style="font-size: large"
+    >
+      Schließen
+    </button>
   </div>
 </template>
 
@@ -49,6 +56,6 @@ export default {
   width: 100vw;
   height: 100vh;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 </style>
