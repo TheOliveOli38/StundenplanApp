@@ -69,10 +69,8 @@ export default {
   watch: {
     getSubjectArray: {
       handler(newValue) {
-        console.log(this.tableIsNotEmpty);
         if (newValue[4][3] != null || undefined) {
           this.tableIsNotEmpty = true;
-          console.log(this.tableIsNotEmpty);
         }
       },
       deep: true,

@@ -143,6 +143,8 @@ const store = createStore({
         freitagLehrer: "",
         freitagRaum: "",
       },
+      dialogOpened: false,
+      tempVar: null,
     };
   },
   mutations: {
@@ -151,9 +153,17 @@ const store = createStore({
       state.std1.montagLehrer = "Hew";
       state.std1.montagRaum = "A101";
     },
+    changeDialogState(state) {
+      if (state.dialogOpened == true) {
+        state.tempVar = null;
+      }
+      state.dialogOpened = !state.dialogOpened;
+    },
+    putIdInTempVar(state, payload) {
+      state.tempVar = payload;
+    },
     saveSubjects(state, { data, DayIndex }) {
       var newData = [];
-      console.log(data);
       var tempData;
       const subjectTitel = [
         "Deutsch",
@@ -178,36 +188,34 @@ const store = createStore({
       for (let i = 0; i < 8; i++) {
         tempData = data[i];
         newData.push(tempData);
-        console.log(newData);
         let namedSubject = subjectTitel[newData[i]?.id];
         if (newData[newData.length - 1]) {
           newData[newData.length - 1].name = namedSubject;
         }
-        console.log(newData);
       }
-      console.log(newData);
       state.Subjects[DayIndex] = newData;
-      console.log(state.Subjects[0][0]);
     },
     setErrorStatus(state, data) {
       state.status = data.data;
-      console.log(data.data);
-      console.log(state.status);
     },
   },
   actions: {
     testEdit({ commit }) {
       commit("testEdit");
     },
+    putIdInTempVar({ commit }, payload) {
+      commit("putIdInTempVar", payload);
+    },
+    changeDialogState({ commit }) {
+      commit("changeDialogState");
+    },
     async getSubjects({ commit }, DayIndex) {
       for (let i = 1; i < 6; i++) {
         await service.getSubjectByDays(i).then((response) => {
-          console.log(response);
           if (response.status == 200 || 201) {
             DayIndex = i - 1;
             commit("saveSubjects", { data: response.data, DayIndex });
           } else if (response != 200) {
-            console.log(response);
             commit("setErrorStatus", { data: response });
           }
         });
@@ -215,6 +223,9 @@ const store = createStore({
     },
   },
   getters: {
+    getDialogStatus(state) {
+      return state.dialogOpened;
+    },
     getFachByWochentag: (state) => (std, wochentag) => {
       const stdData = state[std];
       if (stdData && stdData[wochentag + "Fach"]) {
@@ -241,6 +252,46 @@ const store = createStore({
     },
     returnErrorStatus(state) {
       return state.status;
+    },
+    getTempVar(state) {
+      return state.tempVar;
+    },
+    findRightInfoWithId(state) {
+      if (state.tempVar < 10) {
+        for (let i = 0; i < 8; i++) {
+          if (state.tempVar == i) {
+            return state.Subjects[0][i];
+          }
+        }
+      }
+      if (state.tempVar >= 10) {
+        for (let i = 0; i < 8; i++) {
+          if (state.tempVar == 10 + i) {
+            return state.Subjects[1][i];
+          }
+        }
+      }
+      if (state.tempVar >= 20) {
+        for (let i = 0; i < 8; i++) {
+          if (state.tempVar == 20 + i) {
+            return state.Subjects[2][i];
+          }
+        }
+      }
+      if (state.tempVar >= 30) {
+        for (let i = 0; i < 8; i++) {
+          if (state.tempVar == 30 + i) {
+            return state.Subjects[3][i];
+          }
+        }
+      }
+      if (state.tempVar >= 40) {
+        for (let i = 0; i < 8; i++) {
+          if (state.tempVar == 40 + i) {
+            return state.Subjects[4][i];
+          }
+        }
+      }
     },
   },
 });

@@ -6,22 +6,22 @@
       {{ getSubjectArray[0][index]?.lehrkraft }} <br />
       {{ getSubjectArray[0][index]?.raum }}
     </td>
-    <td :id="index + 10" style="width: 20%">
+    <td :id="index + 10" style="width: 20%" @click="openDialogOnClick($event)">
       {{ getSubjectArray[1][index]?.name }}<br />
       {{ getSubjectArray[1][index]?.lehrkraft }} <br />
       {{ getSubjectArray[1][index]?.raum }}
     </td>
-    <td :id="index + 20" style="width: 20%">
+    <td :id="index + 20" style="width: 20%" @click="openDialogOnClick($event)">
       {{ getSubjectArray[2][index]?.name }}<br />
       {{ getSubjectArray[2][index]?.lehrkraft }} <br />
       {{ getSubjectArray[2][index]?.raum }}
     </td>
-    <td :id="index + 30" style="width: 20%">
+    <td :id="index + 30" style="width: 20%" @click="openDialogOnClick($event)">
       {{ getSubjectArray[3][index]?.name }}<br />
       {{ getSubjectArray[3][index]?.lehrkraft }} <br />
       {{ getSubjectArray[3][index]?.raum }}
     </td>
-    <td :id="index + 40" style="width: 20%">
+    <td :id="index + 40" style="width: 20%" @click="openDialogOnClick($event)">
       {{ getSubjectArray[4][index]?.name }}<br />
       {{ getSubjectArray[4][index]?.lehrkraft }} <br />
       {{ getSubjectArray[4][index]?.raum }}
@@ -44,17 +44,17 @@ export default {
       "getLehrerByWochentag",
       "getRaumByWochentag",
       "getSubjectArray",
+      "getDialogStatus",
     ]),
   },
   methods: {
     openDialogOnClick(event) {
-      if (event.target.id == 1) {
-        this.$store.dispatch("testEdit");
-      } else {
-        console.log("Did not click on right object!");
+      if (event.target.innerHTML != "<br>  <br> ") {
+        this.putIdInTempVar(event.target.id);
+        this.changeDialogState();
       }
     },
-    ...mapActions(["getSubjects"]),
+    ...mapActions(["getSubjects", "changeDialogState", "putIdInTempVar"]),
   },
 
   async mounted() {

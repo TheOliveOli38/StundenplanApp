@@ -6,7 +6,6 @@ async function getSubjectByDays(i, DayIndex) {
       method: "get",
       url: "http://localhost:8081/Tag/getSubjectsByDay/" + i,
     });
-    console.log(response.status);
     return response;
   } catch (error) {
     console.warn("Error with code:", error.response.status);

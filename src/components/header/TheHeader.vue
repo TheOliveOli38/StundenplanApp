@@ -1,5 +1,5 @@
 <template>
-  <header class="mdl-layout__header">
+  <header class="mdl-layout__header headerc">
     <div class="mdl-layout__header-row">
       <i class="material-icons">table_chart</i>
       <span
@@ -15,3 +15,9 @@
 <script>
 export default {};
 </script>
+
+<style>
+.headerc {
+  z-index: 1;
+}
+</style>
